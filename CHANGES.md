@@ -1,3 +1,13 @@
+# Version 1.4.0 — The academy finds its voice
+
+- Original procedural magical audio for UI, rooms, production, recruitment, equipment, upgrades, loot, and level-ups.
+- Family-based spell launch sounds plus impact-synchronized damage, criticals, healing, shields, summons, deaths, and battle results.
+- Rift pass, goal, save/interception, and whistle cues timed to broadcast possessions.
+- Quiet room ambience and gentle academy music.
+- Quick mute in the header; master/effects/ambience/music controls in Front Desk settings.
+- Gesture-based audio startup, hidden-tab cleanup, voice limits, and repeated-cue throttling. No offline sound backlog.
+- Add sound.js by uploading the complete root-only archive. Existing saves remain compatible.
+
 # Version 1.3.1 — Compact Strongroom
 
 - Four-column equipment tiles, approximately eight items in the former two-card area.

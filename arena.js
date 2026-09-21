@@ -1,3 +1,4 @@
+import {sound} from './sound.js';
 import {combatEventsAfter,combatEventSequence} from './combat-events.js';
 
 const COLORS={missile:'#b7a5ff',fire:'#ffb04f',frost:'#86e7ff',storm:'#cbb2ff',restoration:'#79efb9',necromancy:'#b7dea0',arcane:'#ac98ff',nature:'#b6e76b',shadow:'#e2a4ed',radiant:'#ffe4a0',barrier:'#72e4e9',hostile:'#ef9a9d'};
@@ -123,9 +124,10 @@ export class ArenaRenderer {
  }
  consume(event){
   const target=this.actors.get(event.targetId),source=this.actors.get(event.sourceId)||target;if(!target)return;
-  if(event.kind==='phase'){this.phaseUntil=this.now+3;this.rings.push({x:target.x,y:target.y,color:'#d7b27b',at:this.now,life:1.6,kind:'phase'});return;}
+  if(event.kind==='phase'){sound('phase');this.phaseUntil=this.now+3;this.rings.push({x:target.x,y:target.y,color:'#d7b27b',at:this.now,life:1.6,kind:'phase'});return;}
   if(event.kind==='death')return; // Death follows the corresponding impact, not the simulation tick.
-  if(event.kind==='summon'){if(source){source.castUntil=this.now+.75;source.castFamily='necromancy';}return;}
+  if(event.kind==='summon'){sound('summon');if(source){source.castUntil=this.now+.75;source.castFamily='necromancy';}return;}
+  if(!['tick','explosion'].includes(event.kind))sound('cast',{family:event.family,pan:(source?.x??.5)*2-1});
   const kind=event.kind,color=COLORS[event.family]||COLORS.missile;
   if(source&&kind!=='tick'){source.castUntil=this.now+.45;source.castFamily=event.family;source.facing=target.x>=source.x?1:-1;}
   if(kind==='strike'&&source){source.goalX=clamp(target.x-.065,.15,.83);source.goalY=target.y+.025;source.castUntil=this.now+.1;}
@@ -137,6 +139,7 @@ export class ArenaRenderer {
   if(this.flights.length>60){const overflow=this.flights.splice(0,this.flights.length-60);for(const f of overflow)if(!f.hit)this.impact(f);}
  }
  impact(flight){const {event}=flight,target=this.actors.get(flight.target);if(!target)return;
+  sound(event.kind==='heal'?'heal':event.kind==='shield'?'shield':event.critical?'critical':'impact',{family:event.family,pan:target.x*2-1});if(event.hpAfter<=0)sound('death');
   if(Number.isFinite(event.hpAfter)){target.hp=event.hpAfter;target.pending=Math.max(0,target.pending-1);if(target.hp<=0&&target.deathAt===null)target.deathAt=this.now;}
   if(event.kind==='shield')target.barrier=target.actor.barrier||event.amount;
   const heal=event.kind==='heal',label=event.kind==='shield'?'WARD':event.critical?'CRITICAL':event.echoAmount?'ECHO':event.absorbed&&!event.amount?'ABSORBED':'';

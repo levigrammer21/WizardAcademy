@@ -1,4 +1,4 @@
-# Validation — version 1.3.1
+# Validation — version 1.4.0
 
 ## Executed and passed
 
@@ -58,3 +58,7 @@ Five new regressions verify three-worker speed and single-batch cost/output, onc
 ## Version 1.3.1 validation
 
 JavaScript syntax and the existing panel-rendering smoke checks passed after replacing inventory cards with compact tiles. CSS uses four equal minmax(0,1fr) columns and 112–116px tile heights. Actual browser/device layout has not been verified here. No simulation changes were made.
+
+## Version 1.4.0 audio validation
+
+Executed syntax checks, panel rendering, arena/Rift regressions, and a mocked Web Audio lifecycle check covering all sound recipes, first-gesture startup, volume clamping, mute, repeated-cue throttling, and hidden-tab source cleanup. No game simulation formulas were changed. Real browser playback, listening quality, device volume, and iPad/Android audio behavior remain unverified in this environment.

@@ -1,6 +1,6 @@
 # Wizard Academy — The First Charter
 
-Version **1.3.1**. A build-free, single-player, generational academy game for GitHub Pages. Firebase email/password authentication and private Firestore saves are integrated using the supplied project configuration.
+Version **1.4.0**. A build-free, single-player, generational academy game for GitHub Pages. Firebase email/password authentication and private Firestore saves are integrated using the supplied project configuration.
 
 ## Put it online from your phone or iPad
 
@@ -142,3 +142,11 @@ Upload all files, including the new **workers.js** module. This release changes 
 Equipment now occupies a four-column grid of compact 112–116px tiles. Eight items fit in two rows, with names, family glyphs, rarity, power, depth, and equipped/locked indicators. Tap anywhere on an item to open all stats, spell details, affixes, ownership, provenance, and comparison/equipment controls. Back to Strongroom retains filters, page, and inventory scroll. Other room cards remain unchanged.
 
 Every generated combat item currently grants its magic family’s spell. The generator has 10 prefixes × 10 families × 12 slot-specific nouns = 1,200 ordinary name combinations. Ten boss tables contain six drops apiece but reuse the same six signature names. Rolled statistics, depth, rarity, and affixes make individual copies different; there is no finite collectible catalogue of fixed-stat items.
+
+## Academy soundscape (1.4.0)
+
+Upload every root file, including **sound.js**. Audio is synthesized with the browser’s Web Audio API, with no external sound files or runtime downloads. The first tap/key press enables playback when supported. Use the header Sound on/Muted button for quick mute, or Front Desk → Settings & save → Sound & music for separate master, effects, ambience, and music controls. Preferences persist with the academy.
+
+Sound covers interface selection, closing panels, distinct room arrivals, production, equipment, purchases, recruits, upgrades, levels, loot, combat spell families/impacts/heals/shields/summons/deaths/results, and Rift passes/shots/saves/fouls. Room ambience and a sparse musical sequence accompany the academy; music yields to combat and match effects. Repeated cues are rate-limited and voice count is capped. Sound generation never consumes simulation randomness or changes rewards.
+
+Audio stops when the tab is hidden. Returning waits for a tap/key press to resume; missed effects and offline production are not replayed. Volume starts conservatively. Unsupported or blocked audio leaves the game playable.

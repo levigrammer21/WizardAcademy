@@ -1,0 +1,35 @@
+# Validation — version 1.0.0
+
+## Executed and passed
+
+15 deterministic simulation tests (`node tests.mjs`):
+
+1. Zero active wizards at founding; starting capacity five; opening creates applicants.
+2. Unique identities and capacity enforcement.
+3. Twelve-hour offline cap, no duplicated elapsed rewards, clock rollback ignored, production advances.
+4. Unknown floors cannot be automated; a cleared new floor stops.
+5. Every boss attempt requires one seal, with no repeated charge for an in-progress fight.
+6. Equipment-granted summons consume matching charges and mana.
+7. A wipe permanently kills the party; recovery restores the original equipment IDs without resurrection.
+8. All 32 schools complete 14 regular games; playoffs yield 236 total matches per season; exactly six schools move between the four leagues while each retains eight teams.
+9. Split offline catch-up and uninterrupted catch-up produce identical league tables.
+10. Retirement, faculty removal on natural death, and permanent wizard archives.
+11. 100,000 statistical samples exercise the positive outlier tail and finite values without max-roll fields.
+12. A 101-year simulation retains complete season archives while keeping live state approximately 232 KB (without a player’s growing active inventory).
+13. Generating 450 items leaves 180 active and 270 safely shelved, with all 450 provenance records retained.
+14. Academy match wins and championships count teams once, not once per participating wizard.
+15. A serialized/resumed real-time combat encounter yields the same final outcome and rewards.
+
+Also executed: module syntax checks and a reproducible DOM-stub rendering smoke check (`node ui-tests.mjs`) across 24 management views, wizard and item details, decisions, live and completed combat, match replay, completed-season history, and an offline report. Academy-name HTML escaping was checked.
+
+## Not verified in this environment
+
+- Real browser rendering, touch input, screenshot review, and physical Fold/iPad behavior. A local browser executable was unavailable, its download failed, and the connected browser could not access the local preview. The DOM-stub check does not verify CSS layout or actual browser event behavior.
+- Authentication against the supplied live Firebase project, deployed rules, real IndexedDB durability, cloud transaction execution, multi-device conflicts, and Firebase quota behavior. No test user or private credentials were created. The project console configuration still needs the setup in README.md.
+- Human playtesting of multi-week balance. The underlying systems were simulated, but that is not equivalent to verifying months of entertainment or difficulty tuning.
+
+## Deliberate implementation boundaries
+
+The browser resolves deterministic scheduled matches on catch-up; there is no scheduled server process. The twelve-hour cap pauses the academy calendar beyond the credited absence. Item statistics have no designed maximum but use finite JavaScript arithmetic. Record boards use retained leaders and paginated archives rather than an unrestricted historical analytics engine. Rival dialogue is personality-driven with situational match quotes; it does not generate unrestricted natural language. There are ten reusable combat spell behaviors tied to the ten families, with item statistics, tiers, and affixes providing build variation. The academy uses stylized vector rooms and simple state-driven movement, not a freeform city builder or full pathfinding engine.
+
+These boundaries are implemented choices, not inactive buttons or unfinished placeholder systems.

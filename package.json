@@ -1,1 +1,1 @@
-{"name":"wizard-academy","version":"1.1.0","private":true,"type":"module","description":"A build-free generational browser academy management game","scripts":{"test":"node tests.mjs && node ui-tests.mjs && node arena-tests.mjs"}}
+{"name":"wizard-academy","version":"1.1.1","private":true,"type":"module","description":"A build-free generational browser academy management game","scripts":{"test":"node tests.mjs && node ui-tests.mjs && node arena-tests.mjs && node task-tests.mjs"}}

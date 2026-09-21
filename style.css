@@ -55,3 +55,14 @@ th{background:#eadff7;color:#72588c}tr.you{background:#def5ef}.stat-cell{backgro
 .arena-roster summary{padding:13px 15px;cursor:pointer;min-height:44px;color:#684f86;font-weight:600;font-size:12px}
 .arena-roster .battle-row{padding:10px 12px;gap:10px}.arena-roster .combatant{max-width:none;color:#392b50;background:#fff9ff;border-color:#ded1ed}.arena-roster .combatant small{color:#79658b}.arena-roster .combatant .bar{background:#e0d6ee}.arena-roster .status-chips{color:#89723f}.arena-roster .enemy-roster{border-top:1px solid #ddcee9}.arena-roster .enemy-icon{font-size:22px;height:28px}
 @media(max-width:520px){.arena-ribbon{gap:7px;padding:12px 10px}.arena-ribbon strong{font-size:18px}.arena-ribbon>span{font-size:9px}.arena-ribbon .arena-kind{font-size:8px;letter-spacing:.6px}#combat-canvas{height:400px}.arena-footer{padding:10px}.arena-footer .battle-between,.arena-footer .summon-strip{font-size:9px}.arena-roster .battle-row{padding:8px;gap:6px}.arena-roster .combatant strong{font-size:15px}.arena-caption{font-size:9px}}
+
+/* Live academy work: stable touch controls and gently advancing task bars. */
+.assignment-row{padding:8px 0 18px;border-bottom:1px solid #d8c8e8}
+.assignment-row>.list-row{border:0;padding-bottom:10px}.assignment-row select{width:220px;max-width:55%;min-height:44px}
+.task-progress{padding:13px 15px;background:linear-gradient(110deg,#e9def8,#e0f3f4);border:1px solid #cbb8e6;border-radius:10px;margin:10px 0;color:#574272}
+.task-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px}.task-heading>span{font-variant-numeric:tabular-nums;white-space:nowrap;color:#655081;font-size:12px}
+.task-track{height:9px;border-radius:10px;background:#cfc2e2;overflow:hidden;margin:10px 0}.task-track i{display:block;height:100%;background:linear-gradient(90deg,#8b4ed3,#397fbc,#35ae9e);border-radius:inherit;transition:width .3s linear}
+.task-progress p{font-size:12px;line-height:1.55;margin:0}.task-progress small{display:block;color:#776387;font-size:11px;margin-top:5px}.task-progress.waiting{background:#f2e8dc;border-color:#d7bf9d}.task-progress.waiting .task-track i{background:#b98b50}
+@media(max-width:520px){.task-heading{align-items:flex-start;flex-direction:column;gap:4px}.assignment-row select{width:185px;max-width:56%}.task-progress{padding:12px}}
+@media(prefers-reduced-motion:reduce){.task-track i{transition:none}}
+.task-content{animation:none!important}

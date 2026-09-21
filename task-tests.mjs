@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import * as M from './model.js';
+import {processTime} from './simulation.js';
+import {taskStatus,workRate,workDuration} from './tasks.js';
+function fixture(){const s=M.makeGame('Workshop',1000000,321);M.openFoundation(s);M.recruit(s,s.applicants[0].id);s.rooms.runes=2;s.rooms.training=1;s.rooms.rift=1;s.rooms.garden=1;s.rooms.observatory=1;return s;}
+let count=0;function test(name,f){f();console.log('PASS',name);count++;}
+test('Displayed inscription ETA reaches the actual batch boundary',()=>{const s=fixture(),w=s.wizards[0];M.assign(s,w,'fire');s.blanks=10;const t=taskStatus(s,w);processTime(s,s.lastWall+(t.remaining-.01)*1000);assert.equal(s.runes.fire||0,0);processTime(s,s.lastWall+20);assert.equal(s.runes.fire,12);assert.ok(w.progress<1);});
+test('Every production job uses the displayed rate and duration',()=>{for(const job of ['blank','seals','garden','research','clerical']){const s=fixture(),w=s.wizards[0];w.job=job;s.gold=500;s.ingredients=20;s.blanks=20;const before={gold:s.gold,blanks:s.blanks,seals:s.seals,potions:s.potions,prestige:s.prestige};const t=taskStatus(s,w);assert.equal(t.cycle,workDuration(w)/workRate(s,w));processTime(s,s.lastWall+t.cycle*1000+1);const key={blank:'blanks',seals:'seals',garden:'potions',research:'prestige',clerical:'gold'}[job];assert.ok(s[key]>before[key],job);}});
+test('Missing resources and tier requirements are explicit and resume correctly',()=>{const s=fixture(),w=s.wizards[0];w.job='fire';w.progress=110;s.blanks=0;assert.equal(taskStatus(s,w).blocked,true);assert.equal(taskStatus(s,w).remaining,null);s.blanks=1;assert.equal(taskStatus(s,w).blocked,false);w.runeTier=3;assert.match(taskStatus(s,w).detail,/level 25/);});
+test('Training and Rift ETAs reach their next level',()=>{for(const job of ['training','athletics']){const s=fixture(),w=s.wizards[0];w.job=job;const eta=taskStatus(s,w).remaining;processTime(s,s.lastWall+eta*1000+1);assert.equal(w[job==='training'?'level':'sportLevel'],2);}});
+test('Display prediction is bounded and cannot mutate saves; expedition suspends work',()=>{const s=fixture(),w=s.wizards[0];w.job='blank';const before=JSON.stringify(s);assert.deepEqual(taskStatus(s,w,100),taskStatus(s,w,5));assert.equal(JSON.stringify(s),before);s.expedition={ids:[w.id],floor:3};assert.equal(taskStatus(s,w).blocked,true);assert.match(taskStatus(s,w).detail,/paused/);});
+console.log(`${count} task tests passed.`);

@@ -1,4 +1,4 @@
-# Validation — version 1.1.0
+# Validation — version 1.1.1
 
 ## Executed and passed
 
@@ -42,3 +42,7 @@ Version 1.0.1 adds a playback-speed regression for Normal/Relaxed/Fast, legacy s
 - Compared complete serialized state against the pre-overhaul combat engine for 40 seeded encounters spanning families and normal/boss floors: identical RNG, damage, costs, rewards, deaths, and logs.
 - Executed the actual drawing code with native Canvas and visually inspected 340px and 720px arena renders. This verifies drawing output, not browser CSS layout or touch input.
 - New presentation modules need no external rendering dependency in the browser. The native Canvas package was used only for development inspection.
+
+## Version 1.1.1 task validation
+
+Five additional automated checks verify inscription completion against its displayed ETA, all production-job cycle rates, blocked supply/tier requirements, next-level training/Rift timing, bounded read-only interpolation, and expedition pauses. All prior simulation, panel, and arena tests also passed. No physical-device or browser layout testing was performed for this update.

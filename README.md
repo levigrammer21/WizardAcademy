@@ -1,6 +1,6 @@
 # Wizard Academy — The First Charter
 
-Version **1.1.0**. A build-free, single-player, generational academy game for GitHub Pages. Firebase email/password authentication and private Firestore saves are integrated using the supplied project configuration.
+Version **1.1.1**. A build-free, single-player, generational academy game for GitHub Pages. Firebase email/password authentication and private Firestore saves are integrated using the supplied project configuration.
 
 ## Put it online from your phone or iPad
 
@@ -112,3 +112,7 @@ Architecture references: [Firebase password authentication](https://firebase.goo
 Upload every file from this archive directly to the same GitHub repository root, replacing existing files. Include the new **arena.js** and **combat-events.js**, as well as **playback.js**. Keep your Firebase configuration. Existing saves and in-progress expeditions remain compatible; no reset or database change is needed. Refresh after GitHub Pages finishes updating.
 
 The dungeon now has five room themes, wandering wizards and monsters, caster-to-target projectiles, ally healing, visible skeleton summons, shields, impact numbers, status effects, and boss phase announcements. Movement is presentation only: front/middle/back targeting, equipment, spells, damage, rewards, and permanent death retain the same rules. Normal, Relaxed, and Fast retain the calmer 1.0.1 pacing. Front Desk → Settings → Academy & combat motion can reduce movement; system reduced-motion preferences also apply to combat. Exact unit statistics remain in “Party & enemy condition,” with the combat ledger below.
+
+## Live work progress (1.1.1)
+
+Include the new root-level tasks.js module when updating. Each assignment, active roster card, and wizard profile now shows the real job, a gently advancing progress bar, remaining time, and batch output/cost. Inscription, unscribed runes, Boss Seals, potions, research, clerical work, adventure training, Rift practice, recovery, and scheduled patrols have contextual progress. Training bars track the next level; recovery bars track HP/mana with injury ETA in text. Missing resources and patrol eligibility are stated explicitly. Production repeats automatically. Cycle times include current facility, faculty, trait, and injury modifiers. Supply contention and changes to assignments or bonuses can change estimates. Changing inscription tier starts that tier’s batch afresh. Existing saves require no reset.

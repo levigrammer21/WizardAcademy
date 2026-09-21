@@ -1,3 +1,4 @@
+import {advanceCombatPlayback} from './playback.js';
 import assert from 'node:assert/strict';
 import {DAY,HOUR,FAMILIES} from './data.js';
 import * as M from './model.js';
@@ -22,4 +23,5 @@ test('Century-scale league and wizard history stays external to live state',()=>
 test('Hundreds of items are shelved without destruction',()=>{const s=game();for(let i=0;i<450;i++)M.item(s,50,true);assert.equal(s.items.length,180);const saved=Object.values(s.pending).filter(a=>a.type==='items');assert.equal(saved.length,450);assert.equal(saved.filter(a=>a.data.vault).length,270);});
 test('League wins and championships count teams once, not five times',()=>{const s=game(222);for(let r=0;r<16;r++)L.playRound(s);const wins=s.league.matches.filter(m=>m.winner==='player').length;assert.equal(s.stats.wins||0,wins);const titles=Object.values(s.league.playoffs).filter(p=>p.champion==='player').length;assert.equal(s.stats.championships||0,titles);});
 test('Manual expedition combat survives serialization with identical outcome',()=>{const a=game(1212);C.startExpedition(a,a.wizards.slice(0,3).map(w=>w.id),1);if(a.combat.state==='choice')C.roomChoice(a,'risk');for(let i=0;i<5;i++)C.stepCombat(a,.25);const b=M.clone(a);finish(a);finish(b);assert.deepEqual(a.combat,b.combat);assert.equal(a.gold,b.gold);assert.deepEqual(a.items,b.items);});
+test('Comfortable playback halves normal pace and supports relaxed speed',()=>{for(const [speed,expected] of [[1,1],[0.5,.5],[2,2],[4,1]]){const s={combat:{state:'fighting',speed}};let elapsed=0;for(let i=0;i<8;i++)advanceCombatPlayback(s,.25,(_,dt)=>elapsed+=dt);assert.equal(elapsed,expected);}const s={combat:{state:'victory',speed:1}};advanceCombatPlayback(s,.25,()=>assert.fail('Completed battle advanced'));});
 console.log(`\n${passed} simulation tests passed.`);

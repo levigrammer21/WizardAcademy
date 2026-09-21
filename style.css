@@ -6,3 +6,38 @@ dialog{padding:0;border:1px solid #cbbb98;border-radius:14px;background:var(--pa
 @media(max-width:800px){.layout{display:block}.side-rail{display:grid;grid-template-columns:1fr 1fr;border-left:0;border-top:1px solid #fff1;padding:20px;gap:25px}.side-rail>section:last-of-type{grid-column:1/-1}.rail-feed{grid-template-columns:repeat(2,1fr)}.sidebar-footer{grid-column:1/-1}.room{height:180px}.topbar{height:auto;min-height:83px;flex-wrap:wrap}.brand h1{max-width:70vw;font-size:27px}.resources{gap:20px;margin-left:auto}.resource strong{font-size:14px}.resource span{font-size:8px}.auth-page{grid-template-columns:1fr}.auth-art{padding:40px 28px 10px}.auth-art h1{font-size:55px;margin:15px 0}.auth-art p{font-size:13px}.mini-castle{display:none}.auth-card-wrap{padding:25px}.auth-card{max-width:550px;padding:26px}.auth-art .eyebrow{font-size:9px}.auth-art .crest{display:none}}
 @media(max-width:520px){.main-school{padding:18px 12px}.topbar{padding:15px 17px;gap:12px}.resources{width:100%;justify-content:space-between}.resource strong{font-size:15px}.school-heading h2{font-size:26px}.school-heading p{font-size:10px}.year-chip{font-size:10px;padding:8px 11px}.year-chip span{display:none}.school-scene{padding:12px 9px}.room-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:27px 16px}.room{height:173px}.room-label{font-size:11px}.scene-hint{font-size:9px}.side-rail{padding:20px 17px;grid-template-columns:1fr}.side-rail>section:last-of-type{grid-column:auto}.rail-feed{grid-template-columns:1fr}.sidebar-footer{grid-column:auto}.bottom-progress{padding:12px}.bottom-progress p{font-size:11px}dialog{width:100vw;max-height:96dvh;margin:auto 0 0;border-radius:16px 16px 0 0;border-bottom:0}#panel-head{padding:18px 18px 14px}#panel-head h2{font-size:28px}#panel-body{padding:20px 17px;max-height:calc(96dvh - 96px);padding-bottom:calc(24px + env(safe-area-inset-bottom))}.cards,.split{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}.stat-grid{grid-template-columns:repeat(2,1fr)}.filters label{min-width:110px}.combat-arena{padding:12px 8px}.combatant{padding:8px 4px}.combatant strong{font-size:16px}.combatant small{font-size:9px}.combatant .portrait{width:34px;height:41px}.battle-row{gap:5px}.scoreboard h3{font-size:18px}.scoreboard strong{font-size:31px}.selector-row{grid-template-columns:90px 1fr}.tabs{gap:6px}.tabs button{font-size:11px;padding:9px 11px}.card{padding:16px}.duo-actions{grid-template-columns:1fr}.onboarding-banner{padding:17px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+/* 1.0.1 · Jewel-lit academy. Color-only overrides: original geometry retained. */
+:root{--bg:#100e2b;--panel:#faf5ff;--ink:#30264d;--muted:#77698b;--gold:#ffd078;--line:#dfd2ed;--green:#653ab4;--red:#bd4265}
+body{color:#f5efff;background:var(--bg)}
+.auth-page{background:radial-gradient(ellipse at 22% 25%,#6541a366,transparent 65%),#151130}
+.auth-art p{color:#cebee8}.auth-card{border-color:#ac7ae8;box-shadow:0 25px 90px #05011388}
+.topbar{background:linear-gradient(110deg,#27164c,#1a2049);border-bottom-color:#9e69ee55}
+.brand .crest{color:#ffce79;text-shadow:0 0 22px #f6b84955}
+.resource span{color:#c6b3e4}.resource strong{color:#ffe4a6}.resource:nth-child(2) strong{color:#d5a5ff}.resource:nth-child(3) strong{color:#88eadc}.resource:nth-child(4) strong{color:#ffbaca}
+.main-school{background:radial-gradient(ellipse at 20% 25%,#6235a647,transparent 65%),radial-gradient(ellipse at 90% 75%,#155b7540,transparent 65%)}
+.school-heading h2{color:#fff0d4}.school-heading p,.year-chip span{color:#beafd7}
+.year-chip{color:#ffe1a4;background:#402466;border-color:#b787e96b}
+.school-scene{background:linear-gradient(135deg,#2e2357aa,#14324488);border-color:#8662c56b;box-shadow:inset 0 0 70px #7c3fe611}
+.room{border-color:#a78bd5;background:#5e4290;box-shadow:0 7px 0 #1e143e,0 9px 12px #05011977}
+.room[data-room="gate"]{border-color:#9763cc}.room[data-room="training"]{border-color:#ed9c72}.room[data-room="runes"]{border-color:#ad8cff}.room[data-room="storage"]{border-color:#ebbe6b}.room[data-room="infirmary"]{border-color:#7adbd8}.room[data-room="rift"]{border-color:#60d8b5}.room[data-room="hall"]{border-color:#e9a4cb}.room[data-room="garden"]{border-color:#95d67d}.room[data-room="observatory"]{border-color:#8daaff}
+.room:hover{border-color:#ffe29b}.room-label{background:#302050;color:#faf1ff;border-color:#b59cda66}.room-label b{color:#ffd48a}.room-badge{background:#ffce78;color:#35214b;box-shadow:0 0 14px #ffca6344}
+.room.locked{background:#251d42;border-color:#8066a2;opacity:.75}.room.locked .room-label{background:#261d40}.room.locked .blueprint{color:#a891c7}
+.walkway,.scene-hint{color:#b1a0cb}.walkway:before,.walkway:after{background:#ac85d855}
+.side-rail{background:linear-gradient(180deg,#21183e,#142b3b);border-left-color:#a777dd33}.rail-title{color:#ffdfa6}.rail-title span,.feed-item .date,.sidebar-footer{color:#bcadd2}
+.notice{background:linear-gradient(135deg,#61359944,#263e6822);border-color:#bc83eb55}.notice h4{color:#ffdc98}.notice p,.feed-item p{color:#ded2ec}.notice button{background:#ffca79;color:#38244c}.feed-item{border-left-color:#bb7df073}
+.conversation{background:#3c2960;color:#f3e5ff}.conversation:after{border-top-color:#3c2960}.speaker{color:#cdb9e3}
+.bottom-progress{background:#263653;border-color:#78b2d855}.bottom-progress p{color:#cadbf0}.bottom-progress strong{color:#fbd68d}
+.onboarding-banner{background:linear-gradient(115deg,#432465,#22445b);border-color:#c491ef88}.onboarding-banner h3{color:#ffe0a1}.onboarding-banner p{color:#deceed}
+#panel-head{background:linear-gradient(110deg,#eee1ff,#e5edff)}#panel-head h2{color:#462773}#panel-head button{background:#ddcbed;color:#432966}#panel-head .eyebrow{color:#8353ae}
+dialog{border-color:#b99bdb}dialog::backdrop{background:#0c062caa}.card{background:#fefaff}.card p,.panel-intro{color:#706180}.metric{background:#eee5fa;border-color:#dac8ed}.metric strong{color:#593592}.metric span{color:#7b6594}
+input,select{background:#fffaff;border-color:#cfbde3;color:#392955}label{color:#6d5586}.tabs button{background:#e9def5;color:#644786}.tabs button.active{background:#7043bd;color:#fff5ff}
+.tag{background:#eee4fa;border-color:#d4bee9;color:#765391}.tag.founder{background:#ffe2a2;border-color:#e4b86b;color:#75491b}.note{background:#eee4fa;border-left-color:#9f70d0;color:#69527e}.note.warning{background:#f9e5eb;border-left-color:#c56687;color:#85445b}
+th{background:#eadff7;color:#72588c}tr.you{background:#def5ef}.stat-cell{background:#fbf7ff;color:#7b668e}.stat-cell b,.item-power,.big-number{color:#644092}.bar{background:#e0d6ee}.bar i{background:#37a994}.bar.mana i{background:#9766d4}
+.combat-arena{background:radial-gradient(ellipse at 50% 55%,#32335a,#19192f);border-color:#625584;color:#eee8fa}.combatant .bar{background:#ffffff15}.combatant small{color:#c6c1dc}.status-chips{color:#f1ca85}.combat-log{background:#eee8f5;color:#655174}
+.result-banner{background:#def0e9;border-color:#a4cebf}.result-banner.defeat{background:#f1dfe9;border-color:#c99cb4}
+.rift-pitch{background:radial-gradient(ellipse at 50% 50%,#547adb55,transparent 45%),repeating-linear-gradient(90deg,#276b72 0,#276b72 80px,#225962 80px,#225962 160px);border-color:#bc97ee66}.rift-player{background:#ffd276;border-color:#24394c}.rift-player.away{background:#cc94ec}
+/* Live views never replay entry fades. Static light, no strobes or hit flashes. */
+.combat-content,.combat-content *{animation:none!important}
+.combat-content .bar i{transition:width .55s ease-out}
+@media(prefers-reduced-motion:reduce){.combat-content .bar i{transition:none}}

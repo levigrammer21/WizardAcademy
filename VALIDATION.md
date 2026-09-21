@@ -1,8 +1,8 @@
-# Validation — version 1.0.0
+# Validation — version 1.0.1
 
 ## Executed and passed
 
-15 deterministic simulation tests (`node tests.mjs`):
+16 deterministic simulation tests (`node tests.mjs`):
 
 1. Zero active wizards at founding; starting capacity five; opening creates applicants.
 2. Unique identities and capacity enforcement.
@@ -33,3 +33,5 @@ Also executed: module syntax checks and a reproducible DOM-stub rendering smoke 
 The browser resolves deterministic scheduled matches on catch-up; there is no scheduled server process. The twelve-hour cap pauses the academy calendar beyond the credited absence. Item statistics have no designed maximum but use finite JavaScript arithmetic. Record boards use retained leaders and paginated archives rather than an unrestricted historical analytics engine. Rival dialogue is personality-driven with situational match quotes; it does not generate unrestricted natural language. There are ten reusable combat spell behaviors tied to the ten families, with item statistics, tiers, and affixes providing build variation. The academy uses stylized vector rooms and simple state-driven movement, not a freeform city builder or full pathfinding engine.
 
 These boundaries are implemented choices, not inactive buttons or unfinished placeholder systems.
+
+Version 1.0.1 adds a playback-speed regression for Normal/Relaxed/Fast, legacy speed fallback, and completed encounters.

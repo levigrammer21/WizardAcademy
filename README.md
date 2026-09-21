@@ -1,6 +1,6 @@
 # Wizard Academy — The First Charter
 
-Version **1.0.0**. A build-free, single-player, generational academy game for GitHub Pages. Firebase email/password authentication and private Firestore saves are integrated using the supplied project configuration.
+Version **1.0.1**. A build-free, single-player, generational academy game for GitHub Pages. Firebase email/password authentication and private Firestore saves are integrated using the supplied project configuration.
 
 ## Put it online from your phone or iPad
 
@@ -35,7 +35,7 @@ Do not open `index.html` directly as a `file://` file; JavaScript modules requir
 
 - An illustrated cutaway academy with twelve environmental navigation locations, animated individual wizards, workplace assignments, contextual speech, and a chronicle.
 - Recruitment from a yearly Prestige-sensitive applicant pool; five starting beds; expansions up to thirty active beds; generated appearance, traits, base statistics, natural sport potential, relationships, aging, retirement, faculty, natural death, and permanent records.
-- Real-time autonomous dungeon fights, 1×/2×/4× viewing, formations, four directives, persistent expedition HP/mana, choice rooms, shrines, traps, treasure, elites, bosses, and permanent combat death.
+- Real-time autonomous dungeon fights, Relaxed/Normal/Fast viewing, formations, four directives, persistent expedition HP/mana, choice rooms, shrines, traps, treasure, elites, bosses, and permanent combat death.
 - Ten magic families; three interchangeable equipment slots; procedural loot with six rarities; twelve affix types; healing, cleansing, shielding, taunting, summoning, damage-over-time, slow, shock, curse, blessing, and equipment interactions.
 - Lognormal statistical rolls with **no designed roll ceiling**. HP, mana, defense, and power roll independently. Items remember where, when, and by whom they were found and their previous wielders.
 - Ten recurring boss archetypes with recognizable second phases and six signature drops each. Boss depth drives base strength and rarity distribution. Every boss attempt costs a seal.
@@ -105,3 +105,7 @@ The Firebase browser SDK is pinned to 11.10.0 and loaded only for cloud accounts
 The save format starts at schema 1. Future schema versions must introduce an explicit migration before changing existing field meanings; the current loader refuses newer incompatible saves.
 
 Architecture references: [Firebase password authentication](https://firebase.google.com/docs/auth/web/password-auth), [atomic Firestore transactions](https://firebase.google.com/docs/firestore/manage-data/transactions), [security rules and authenticated ownership](https://firebase.google.com/docs/rules/basics).
+
+## Updating from 1.0.0
+
+Overwrite the project files on the same GitHub Pages site. Keep your Firebase configuration. Existing saves remain compatible; no reset is needed. The new playback.js file is required. Normal combat runs at half its previous pace; Relaxed halves it again. No new database setup is required.

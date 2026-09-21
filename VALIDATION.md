@@ -1,4 +1,4 @@
-# Validation — version 1.4.0
+# Validation — version 1.4.1
 
 ## Executed and passed
 
@@ -62,3 +62,7 @@ JavaScript syntax and the existing panel-rendering smoke checks passed after rep
 ## Version 1.4.0 audio validation
 
 Executed syntax checks, panel rendering, arena/Rift regressions, and a mocked Web Audio lifecycle check covering all sound recipes, first-gesture startup, volume clamping, mute, repeated-cue throttling, and hidden-tab source cleanup. No game simulation formulas were changed. Real browser playback, listening quality, device volume, and iPad/Android audio behavior remain unverified in this environment.
+
+## Version 1.4.1 validation
+
+Targeted tests passed for zero-gold recruitment to five, constrained starting stats despite high Prestige, untouched normal applicants, permanent historical origin/deaths, repaired lineups/unique jerseys, a non-forfeit match after rebuilding, repeat-call rejection, injury limits, and unopened-academy rejection. Panel smoke checks and edited-module syntax checks passed.

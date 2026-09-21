@@ -1,3 +1,11 @@
+# Version 1.4.1 — Emergency admissions
+
+- Free, immediate basic recruits restore enrollment to five active wizards.
+- Available from Admissions, Rift league/lineup, and the dungeon gate when short-handed.
+- Level-1 recruits with modest stats and no equipment/Prestige boost; regular applicants remain available.
+- Repairs vacant/deceased starter slots, preserves active starters, and assigns unique jerseys.
+- Does not resurrect fallen wizards, reverse forfeits, or recruit above five active wizards.
+
 # Version 1.4.0 — The academy finds its voice
 
 - Original procedural magical audio for UI, rooms, production, recruitment, equipment, upgrades, loot, and level-ups.

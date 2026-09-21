@@ -1,6 +1,6 @@
 # Wizard Academy — The First Charter
 
-Version **1.4.0**. A build-free, single-player, generational academy game for GitHub Pages. Firebase email/password authentication and private Firestore saves are integrated using the supplied project configuration.
+Version **1.4.1**. A build-free, single-player, generational academy game for GitHub Pages. Firebase email/password authentication and private Firestore saves are integrated using the supplied project configuration.
 
 ## Put it online from your phone or iPad
 
@@ -150,3 +150,11 @@ Upload every root file, including **sound.js**. Audio is synthesized with the br
 Sound covers interface selection, closing panels, distinct room arrivals, production, equipment, purchases, recruits, upgrades, levels, loot, combat spell families/impacts/heals/shields/summons/deaths/results, and Rift passes/shots/saves/fouls. Room ambience and a sparse musical sequence accompany the academy; music yields to combat and match effects. Repeated cues are rate-limited and voice count is capped. Sound generation never consumes simulation randomness or changes rewards.
 
 Audio stops when the tab is hidden. Returning waits for a tap/key press to resume; missed effects and offline production are not replayed. Volume starts conservatively. Unsupported or blocked audio leaves the game playable.
+
+## Emergency admissions (1.4.1)
+
+When active enrollment falls below five, Emergency Recruit appears in Front Desk admissions, Arcane Rift league/lineup, and the dungeon gate. One tap recruits the shortfall immediately and free, without using up the regular applicant pool. These basic recruits start at adventure/Rift level 1, with modest natural stats, potential 35–45, and no equipment or Prestige boost. They retain full careers and can develop normally.
+
+Vacant, deceased, retired, or duplicate starter slots are filled from available recruits/current wizards; existing active starters remain. Unique jerseys are assigned normally. The button stops at five active wizards, even with a larger Dormitory. Injuries and expedition absences do not create extra enrollment capacity. Dead wizards remain dead and past forfeits remain recorded. You still need an open Rift facility. Recruitment is manual, not automatic while offline.
+
+At match time, configured eligible bench players replace missing starters. If fewer than five eligible players remain against a complete opponent, the match is forfeited 5–0.

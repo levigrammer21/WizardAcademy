@@ -1,4 +1,4 @@
-# Validation — version 1.3.0
+# Validation — version 1.3.1
 
 ## Executed and passed
 
@@ -54,3 +54,7 @@ All existing tests passed, plus five new regressions for capacity/jersey uniquen
 ## Version 1.3.0 shared production validation
 
 Five new regressions verify three-worker speed and single-batch cost/output, once-only migration, preserved paused work and atomic validation, supply-starved batch banking, and split offline/save-resume equivalence. Added UI checks verify one Ember action, absence of unrelated workers in the Rune Chamber, full current-job visibility in the picker, and the full Dorm overview. Existing simulation, arena, task, and panel regressions passed; physical browser/device rendering remains unverified.
+
+## Version 1.3.1 validation
+
+JavaScript syntax and the existing panel-rendering smoke checks passed after replacing inventory cards with compact tiles. CSS uses four equal minmax(0,1fr) columns and 112–116px tile heights. Actual browser/device layout has not been verified here. No simulation changes were made.

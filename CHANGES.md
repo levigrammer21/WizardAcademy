@@ -1,3 +1,10 @@
+# Version 1.3.1 — Compact Strongroom
+
+- Four-column equipment tiles, approximately eight items in the former two-card area.
+- Tap any tile for full inspection, comparison, equipment controls, and provenance.
+- Retained filters, sorting, pagination, equipped/locked markers, and back navigation to the inventory.
+- No changes to loot generation, spells, balance, or saves.
+
 # Version 1.3.0 — One recipe, one team
 
 - Inscribe buttons beside each rune family; choose tier and select wizards with their current jobs visible.

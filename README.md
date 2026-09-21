@@ -1,6 +1,6 @@
 # Wizard Academy — The First Charter
 
-Version **1.3.0**. A build-free, single-player, generational academy game for GitHub Pages. Firebase email/password authentication and private Firestore saves are integrated using the supplied project configuration.
+Version **1.3.1**. A build-free, single-player, generational academy game for GitHub Pages. Firebase email/password authentication and private Firestore saves are integrated using the supplied project configuration.
 
 ## Put it online from your phone or iPad
 
@@ -136,3 +136,9 @@ Each recipe and rune tier has one saved progress pool. Worker effectiveness adds
 Existing partial production is migrated once into the matching shared recipe without resetting your academy. Removing workers pauses a recipe without erasing progress. Insufficient materials bank at most one ready batch; resupplying does not grant a stockpile of unfunded output. Career production credit and inscription XP are shared according to worker contribution. Shared work persists through offline catch-up and reloads.
 
 Upload all files, including the new **workers.js** module. This release changes saved production behavior; continue using 1.3.0 or later after upgrading.
+
+## Compact Strongroom (1.3.1)
+
+Equipment now occupies a four-column grid of compact 112–116px tiles. Eight items fit in two rows, with names, family glyphs, rarity, power, depth, and equipped/locked indicators. Tap anywhere on an item to open all stats, spell details, affixes, ownership, provenance, and comparison/equipment controls. Back to Strongroom retains filters, page, and inventory scroll. Other room cards remain unchanged.
+
+Every generated combat item currently grants its magic family’s spell. The generator has 10 prefixes × 10 families × 12 slot-specific nouns = 1,200 ordinary name combinations. Ten boss tables contain six drops apiece but reuse the same six signature names. Rolled statistics, depth, rarity, and affixes make individual copies different; there is no finite collectible catalogue of fixed-stat items.

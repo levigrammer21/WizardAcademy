@@ -1,4 +1,4 @@
-# Validation — version 1.1.1
+# Validation — version 1.2.0
 
 ## Executed and passed
 
@@ -46,3 +46,7 @@ Version 1.0.1 adds a playback-speed regression for Normal/Relaxed/Fast, legacy s
 ## Version 1.1.1 task validation
 
 Five additional automated checks verify inscription completion against its displayed ETA, all production-job cycle rates, blocked supply/tier requirements, next-level training/Rift timing, bounded read-only interpolation, and expedition pauses. All prior simulation, panel, and arena tests also passed. No physical-device or browser layout testing was performed for this update.
+
+## Version 1.2.0 Rift validation
+
+All existing tests passed, plus five new regressions for capacity/jersey uniqueness, historical number snapshots, playback scoring/pause/completion without match mutation, finite positional geometry/legacy recordings, and offseason scheduling after elimination. The 101-year simulation still retains a compact live state (approximately 232 KB in its fixture). DOM-stub panel rendering passed; real browser animation, touch input, and physical-device layout were not verified.

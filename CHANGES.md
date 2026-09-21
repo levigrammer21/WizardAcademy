@@ -1,3 +1,13 @@
+# Version 1.2.0 — Matchday at the academy
+
+- Prominent Arcane Rift strip: season W–L, league rank, opponent, countdown, and latest broadcast access.
+- Smooth persistent pitch with numbered dots, passes, shots, saves/interceptions, possession commentary, and score updates at resolution.
+- Assign unique active-wizard jerseys 0–99 from Lineup & tactics or individual profiles. New match snapshots preserve historical uniforms.
+- Match Theatre can begin the next scheduled recording as it resolves; playback never changes saved rewards or results.
+- Fixed next-match information after playoff elimination and season completion.
+- Retained the 30-active-wizard capacity, existing save compatibility, combat, and all work progress improvements.
+- Added root modules jerseys.js and rift-motion.js. Upload all files.
+
 # Version 1.1.1 — Work you can watch
 
 - Live per-wizard tasks with smooth progress, remaining time, output/cost, and repeat-cycle duration.

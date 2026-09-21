@@ -1,6 +1,6 @@
 # Wizard Academy — The First Charter
 
-Version **1.1.1**. A build-free, single-player, generational academy game for GitHub Pages. Firebase email/password authentication and private Firestore saves are integrated using the supplied project configuration.
+Version **1.2.0**. A build-free, single-player, generational academy game for GitHub Pages. Firebase email/password authentication and private Firestore saves are integrated using the supplied project configuration.
 
 ## Put it online from your phone or iPad
 
@@ -116,3 +116,13 @@ The dungeon now has five room themes, wandering wizards and monsters, caster-to-
 ## Live work progress (1.1.1)
 
 Include the new root-level tasks.js module when updating. Each assignment, active roster card, and wizard profile now shows the real job, a gently advancing progress bar, remaining time, and batch output/cost. Inscription, unscribed runes, Boss Seals, potions, research, clerical work, adventure training, Rift practice, recovery, and scheduled patrols have contextual progress. Training bars track the next level; recovery bars track HP/mana with injury ETA in text. Missing resources and patrol eligibility are stated explicitly. Production repeats automatically. Cycle times include current facility, faculty, trait, and injury modifiers. Supply contention and changes to assignments or bonuses can change estimates. Changing inscription tier starts that tier’s batch afresh. Existing saves require no reset.
+
+## Arcane Rift broadcast (1.2.0)
+
+Upload the complete root files, including jerseys.js and rift-motion.js. The academy header now features regular-season wins/losses, league position, next opponent, and a live countdown. Use the strip to enter Arcane Rift or watch the latest recording. Eliminated teams see next season’s first match window.
+
+Assign unique numbers 0–99 in Arcane Rift → Lineup & tactics, or a wizard’s profile. Existing active wizards receive free numbers automatically, without resetting progress. Retired wizards release their active number; historical recordings retain the uniform at match time. Older recordings use labeled fallback display numbers.
+
+The broadcast shows smooth numbered dots, controller-to-striker passes, shots, defender interceptions/saves, and scores on resolution. A possession takes 3.6 presentation seconds. Pause, next play, and final-score controls remain available. The simulation still resolves scheduled results once; this is smooth playback of that outcome, not a separate multiplayer/server-live match. Keep Match Theatre open to start the next scheduled player match automatically when it resolves. Reduced-motion preferences are honored. Playback pauses while the page is hidden.
+
+Current active capacity is 30 at Dormitory tier VI (five beds per tier). Retired wizards and faculty do not consume active beds.

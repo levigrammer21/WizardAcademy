@@ -1,4 +1,4 @@
-# Validation — version 1.0.1
+# Validation — version 1.1.0
 
 ## Executed and passed
 
@@ -24,7 +24,7 @@ Also executed: module syntax checks and a reproducible DOM-stub rendering smoke 
 
 ## Not verified in this environment
 
-- Real browser rendering, touch input, screenshot review, and physical Fold/iPad behavior. A local browser executable was unavailable, its download failed, and the connected browser could not access the local preview. The DOM-stub check does not verify CSS layout or actual browser event behavior.
+- Real browser rendering, touch input, and physical Fold/iPad behavior. A local browser executable was unavailable, its download failed, and the connected browser could not access the local preview. The DOM-stub check does not verify CSS layout or actual browser event behavior.
 - Authentication against the supplied live Firebase project, deployed rules, real IndexedDB durability, cloud transaction execution, multi-device conflicts, and Firebase quota behavior. No test user or private credentials were created. The project console configuration still needs the setup in README.md.
 - Human playtesting of multi-week balance. The underlying systems were simulated, but that is not equivalent to verifying months of entertainment or difficulty tuning.
 
@@ -35,3 +35,10 @@ The browser resolves deterministic scheduled matches on catch-up; there is no sc
 These boundaries are implemented choices, not inactive buttons or unfinished placeholder systems.
 
 Version 1.0.1 adds a playback-speed regression for Normal/Relaxed/Fast, legacy speed fallback, and completed encounters.
+
+## Version 1.1.0 arena validation
+
+- Six additional regressions check source/target events, healing and summoning, bounded movement with unchanged game state, impact ordering and death timing, bounded transient buffers/reopening, and finite geometry across all five themes at narrow/tablet widths.
+- Compared complete serialized state against the pre-overhaul combat engine for 40 seeded encounters spanning families and normal/boss floors: identical RNG, damage, costs, rewards, deaths, and logs.
+- Executed the actual drawing code with native Canvas and visually inspected 340px and 720px arena renders. This verifies drawing output, not browser CSS layout or touch input.
+- New presentation modules need no external rendering dependency in the browser. The native Canvas package was used only for development inspection.

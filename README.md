@@ -1,6 +1,6 @@
 # Wizard Academy — The First Charter
 
-Version **1.0.1**. A build-free, single-player, generational academy game for GitHub Pages. Firebase email/password authentication and private Firestore saves are integrated using the supplied project configuration.
+Version **1.1.0**. A build-free, single-player, generational academy game for GitHub Pages. Firebase email/password authentication and private Firestore saves are integrated using the supplied project configuration.
 
 ## Put it online from your phone or iPad
 
@@ -91,14 +91,15 @@ Everything is in the root:
 | data.js | Families, names, traits, schools, bosses, events, dialogue, achievements |
 | model.js | Core state, random generation, items, records, lifecycle operations |
 | combat.js | Encounter state, ability AI, status effects, deaths, caches, patrols |
+| arena.js, combat-events.js, playback.js | Animated arena, transient action events, comfortable combat pacing |
 | sports.js | Round-robin league, match simulation, playoffs, seasons, promotion |
 | simulation.js | Elapsed time, production, aging, events, social interaction |
 | persistence.js | IndexedDB, Firebase, revision conflicts, archives, backup |
 | firebase-config.js, firestore.rules | Public configuration and private UID access rules |
-| tests.mjs, ui-tests.mjs | Executable simulation regressions and DOM-stub panel rendering checks |
+| tests.mjs, ui-tests.mjs, arena-tests.mjs | Executable simulation regressions and DOM-stub panel rendering checks |
 | VALIDATION.md | Verification results and remaining limitations |
 
-Optional local verification, if a computer is available: `node tests.mjs`. The game itself does not require Node. For local HTTP testing: `python3 -m http.server 8080`, then visit `http://localhost:8080`.
+Optional local verification, if a computer is available: `npm test`. The game itself does not require Node. For local HTTP testing: `python3 -m http.server 8080`, then visit `http://localhost:8080`.
 
 The Firebase browser SDK is pinned to 11.10.0 and loaded only for cloud accounts. Fonts are optional remote enhancements with serif/system fallbacks. All room and character artwork is code-drawn; no external image library is required.
 
@@ -106,6 +107,8 @@ The save format starts at schema 1. Future schema versions must introduce an exp
 
 Architecture references: [Firebase password authentication](https://firebase.google.com/docs/auth/web/password-auth), [atomic Firestore transactions](https://firebase.google.com/docs/firestore/manage-data/transactions), [security rules and authenticated ownership](https://firebase.google.com/docs/rules/basics).
 
-## Updating from 1.0.0
+## Updating from 1.0.0 or 1.0.1
 
-Overwrite the project files on the same GitHub Pages site. Keep your Firebase configuration. Existing saves remain compatible; no reset is needed. The new playback.js file is required. Normal combat runs at half its previous pace; Relaxed halves it again. No new database setup is required.
+Upload every file from this archive directly to the same GitHub repository root, replacing existing files. Include the new **arena.js** and **combat-events.js**, as well as **playback.js**. Keep your Firebase configuration. Existing saves and in-progress expeditions remain compatible; no reset or database change is needed. Refresh after GitHub Pages finishes updating.
+
+The dungeon now has five room themes, wandering wizards and monsters, caster-to-target projectiles, ally healing, visible skeleton summons, shields, impact numbers, status effects, and boss phase announcements. Movement is presentation only: front/middle/back targeting, equipment, spells, damage, rewards, and permanent death retain the same rules. Normal, Relaxed, and Fast retain the calmer 1.0.1 pacing. Front Desk → Settings → Academy & combat motion can reduce movement; system reduced-motion preferences also apply to combat. Exact unit statistics remain in “Party & enemy condition,” with the combat ledger below.

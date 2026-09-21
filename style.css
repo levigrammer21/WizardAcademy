@@ -41,3 +41,17 @@ th{background:#eadff7;color:#72588c}tr.you{background:#def5ef}.stat-cell{backgro
 .combat-content,.combat-content *{animation:none!important}
 .combat-content .bar i{transition:width .55s ease-out}
 @media(prefers-reduced-motion:reduce){.combat-content .bar i{transition:none}}
+
+/* 1.1.0 · The living dungeon. The academy layout remains unchanged. */
+.combat-arena.arena-theatre{padding:0;min-height:0;border-radius:12px;overflow:hidden;background:#171528;border-color:#75608f}
+.arena-theatre:before{display:none}
+.arena-ribbon{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 17px;background:linear-gradient(100deg,#312547,#1e263b);border-bottom:1px solid #b396d52b;color:#d8c9eb}
+.arena-ribbon>span{font-size:10px;letter-spacing:1.6px;color:#f3ce8f;white-space:nowrap}.arena-ribbon strong{font-family:var(--display);font-size:22px;font-weight:500;text-align:center}.arena-ribbon .arena-kind{color:#b7c4e8;font-size:9px}
+#combat-canvas{display:block;width:100%;height:clamp(375px,54vw,520px);touch-action:pan-y}
+.arena-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#201d32;padding:10px 16px;border-top:1px solid #9e86c328}
+.arena-footer .battle-between,.arena-footer .summon-strip{padding:0;color:#c4b8d7;font-size:10px;letter-spacing:.5px}
+.arena-caption{font-size:10px;color:#79688f;margin:10px 0 13px;line-height:1.7}
+.arena-roster{background:#eee6f7;border:1px solid #d9c8e9;border-radius:8px;margin:12px 0}
+.arena-roster summary{padding:13px 15px;cursor:pointer;min-height:44px;color:#684f86;font-weight:600;font-size:12px}
+.arena-roster .battle-row{padding:10px 12px;gap:10px}.arena-roster .combatant{max-width:none;color:#392b50;background:#fff9ff;border-color:#ded1ed}.arena-roster .combatant small{color:#79658b}.arena-roster .combatant .bar{background:#e0d6ee}.arena-roster .status-chips{color:#89723f}.arena-roster .enemy-roster{border-top:1px solid #ddcee9}.arena-roster .enemy-icon{font-size:22px;height:28px}
+@media(max-width:520px){.arena-ribbon{gap:7px;padding:12px 10px}.arena-ribbon strong{font-size:18px}.arena-ribbon>span{font-size:9px}.arena-ribbon .arena-kind{font-size:8px;letter-spacing:.6px}#combat-canvas{height:400px}.arena-footer{padding:10px}.arena-footer .battle-between,.arena-footer .summon-strip{font-size:9px}.arena-roster .battle-row{padding:8px;gap:6px}.arena-roster .combatant strong{font-size:15px}.arena-caption{font-size:9px}}

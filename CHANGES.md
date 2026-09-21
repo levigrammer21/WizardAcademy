@@ -1,3 +1,13 @@
+# Version 1.3.0 — One recipe, one team
+
+- Inscribe buttons beside each rune family; choose tier and select wizards with their current jobs visible.
+- Production is pooled per recipe/tier: combined worker speed drives one batch, one timer, and one progress bar.
+- Rune Chamber, brewing, research, and office production show only their own teams. Dorms remain the full academy overview.
+- Training, Rift practice, and recovery use room-local assignments and the same worker picker.
+- Existing partial work migrates once; shared progress survives reassignment, offline time, and reloads.
+- Blocked production banks one batch only. Production credit is distributed among contributing workers.
+- New required root file: workers.js. Upload the complete archive.
+
 # Version 1.2.0 — Matchday at the academy
 
 - Prominent Arcane Rift strip: season W–L, league rank, opponent, countdown, and latest broadcast access.

@@ -1,6 +1,6 @@
 # Wizard Academy — The First Charter
 
-Version **1.2.0**. A build-free, single-player, generational academy game for GitHub Pages. Firebase email/password authentication and private Firestore saves are integrated using the supplied project configuration.
+Version **1.3.0**. A build-free, single-player, generational academy game for GitHub Pages. Firebase email/password authentication and private Firestore saves are integrated using the supplied project configuration.
 
 ## Put it online from your phone or iPad
 
@@ -126,3 +126,13 @@ Assign unique numbers 0–99 in Arcane Rift → Lineup & tactics, or a wizard’
 The broadcast shows smooth numbered dots, controller-to-striker passes, shots, defender interceptions/saves, and scores on resolution. A possession takes 3.6 presentation seconds. Pause, next play, and final-score controls remain available. The simulation still resolves scheduled results once; this is smooth playback of that outcome, not a separate multiplayer/server-live match. Keep Match Theatre open to start the next scheduled player match automatically when it resolves. Reduced-motion preferences are honored. Playback pauses while the page is hidden.
 
 Current active capacity is 30 at Dormitory tier VI (five beds per tier). Retired wizards and faculty do not consume active beds.
+
+## Shared workshop production (1.3.0)
+
+In the Rune Chamber, tap **Inscribe** beside a family in the rune-charge table. Select the tier, then check the wizards to assign. The picker shows every active wizard’s current job and marks unavailable/under-level workers. Apply moves selected wizards to that recipe; unchecked current workers rest. Cancel/Back leaves assignments unchanged. Wizards away on expeditions cannot be moved.
+
+Each recipe and rune tier has one saved progress pool. Worker effectiveness adds together: three equally fast wizards complete one batch in one-third the solo time. The room shows only its local tasks, assigned names, shared progress, batch output/cost, and combined cycle time. This applies to blank runes, inscription, seals, potion brewing, research, and clerical work. Training/recovery stay individual and their rooms only show assigned wizards. Dorms retain the entire roster and its jobs.
+
+Existing partial production is migrated once into the matching shared recipe without resetting your academy. Removing workers pauses a recipe without erasing progress. Insufficient materials bank at most one ready batch; resupplying does not grant a stockpile of unfunded output. Career production credit and inscription XP are shared according to worker contribution. Shared work persists through offline catch-up and reloads.
+
+Upload all files, including the new **workers.js** module. This release changes saved production behavior; continue using 1.3.0 or later after upgrading.

@@ -1,4 +1,4 @@
-# Validation — version 1.2.0
+# Validation — version 1.3.0
 
 ## Executed and passed
 
@@ -50,3 +50,7 @@ Five additional automated checks verify inscription completion against its displ
 ## Version 1.2.0 Rift validation
 
 All existing tests passed, plus five new regressions for capacity/jersey uniqueness, historical number snapshots, playback scoring/pause/completion without match mutation, finite positional geometry/legacy recordings, and offseason scheduling after elimination. The 101-year simulation still retains a compact live state (approximately 232 KB in its fixture). DOM-stub panel rendering passed; real browser animation, touch input, and physical-device layout were not verified.
+
+## Version 1.3.0 shared production validation
+
+Five new regressions verify three-worker speed and single-batch cost/output, once-only migration, preserved paused work and atomic validation, supply-starved batch banking, and split offline/save-resume equivalence. Added UI checks verify one Ember action, absence of unrelated workers in the Rune Chamber, full current-job visibility in the picker, and the full Dorm overview. Existing simulation, arena, task, and panel regressions passed; physical browser/device rendering remains unverified.

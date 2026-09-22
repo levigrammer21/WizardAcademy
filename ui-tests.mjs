@@ -16,6 +16,7 @@ startDuel(s,s.wizards[0].id,0);let duelHTML=app.renderForTest({type:'duel',bout:
 console.log('PASS loot reveals, duel ladder, live canvas panel, and first-win reward panel.');
 const install=app.renderForTest({type:'install'});if(!install.includes('Add to Home Screen')||!install.includes('Install app'))throw Error('Missing installation instructions');
 const profile=app.renderForTest({type:'wizard',id:s.wizards[0].id});if((profile.match(/data-act="equipment-slot"/g)||[]).length!==3)throw Error('Expected three tappable slots');
+if(profile.indexOf('Choose &amp; compare equipment')<0&&profile.indexOf('Choose & compare equipment')<0)throw Error('Missing equipment priority');if(profile.indexOf('Headmaster’s tags')>profile.indexOf('Work & expedition behavior'))throw Error('Tags buried after work controls');if(!app.renderForTest({type:'room',id:'rift',tab:'lineup'}).includes('Set best lineup'))throw Error('Missing lineup action');
 const choice=s.items.find(i=>i.slot==='focus');if(!choice)throw Error('Fixture lacks focus');
 const slot=app.renderForTest({type:'equipment-slot',wizard:s.wizards[0].id,slot:'focus',preview:choice.id});if(!slot.includes('Whole-wizard totals')||!slot.includes('SELECTED ITEM')||!slot.includes('data-act="slot-equip"'))throw Error('Missing selected comparison');
 const detail=app.renderForTest({type:'item',id:choice.id,target:s.wizards[0].id,slotParent:{type:'equipment-slot',wizard:s.wizards[0].id,slot:'focus'}});if(!detail.includes('Back to slot comparison'))throw Error('Lost slot return path');

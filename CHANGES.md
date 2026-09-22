@@ -1,3 +1,11 @@
+# Version 1.8.0 — Know your wizards
+
+- Dorm cards prioritize identity, player tags, current assignment, and three tappable equipment slots. Detailed work progress is expandable rather than dominating each card.
+- Wizard profiles show equipment and editable tags before work controls. Complete career statistics remain available in an expandable section.
+- Up to six player-defined tags per wizard, with suggested Combat, Arcane Rift, Rune Binding, Arcane, Healer, Summoner, Training, and Reserve labels. Custom tags support 24 characters. Dorms can filter by tag. Labels persist with wizard records and never impose permanent classes or assignments.
+- Arcane Rift → Lineup has Set best lineup. Exact five-position assignment maximizes the sum of the existing position-rating formula, using eligible active wizards, and fills three reserves by average position rating. Injured and expedition-bound wizards are excluded. Short rosters produce an explicit warning. Tactics, jobs, equipment, and tags remain untouched; manual adjustments still work.
+- Installed-app cache version updated with the new roster module.
+
 # Version 1.7.0 — Install your academy & wizard wardrobe
 
 - Installable PWA with a standalone window, root-relative manifest, 192/512-pixel maskable PNG icons, iPad home-screen metadata, and offline app-shell caching for local play. All files remain at repository root.

@@ -80,3 +80,8 @@ Full `npm test` suite passed: simulation (including century-scale history), UI p
 ## Version 1.7.0 validation
 
 Targeted equipment/PWA regression tests and full UI panel smoke tests passed. Equipment checks cover slot-only candidates, current-item priority, other-owner restrictions, read-only comparison, whole-build stat preview, expedition restrictions, and replacement ownership. UI checks cover three tappable slots, comparison/action content, item-detail return navigation, and install help. Service-worker tests execute install/activate/fetch/message handlers against mocked browser APIs, validate every precached path, exclude Firebase/external requests, preserve unrelated caches, and require an explicit message for immediate activation. Manifest icon dimensions and standalone/start/scope settings were validated. All JavaScript syntax checks passed. Actual browser installation, service-worker lifecycle on devices, visual CSS layout and cloud authentication were not tested on a physical Samsung or iPad here.
+
+
+## Version 1.8.0 validation
+
+Tag and lineup tests passed: normalization, duplicate prevention, removal, JSON persistence, comparison against an exhaustive five-position assignment search, unique starters/reserves, injured/expedition exclusions, short rosters, and no eligible players. Management/profile panel smoke tests passed with equipment-slot navigation retained. New module added to service-worker precache. Actual touch/CSS rendering on Samsung and iPad remains unverified.

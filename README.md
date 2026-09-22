@@ -192,3 +192,8 @@ Upload **all** files in the ZIP to the GitHub repository root, including `sw.js`
 ## Equip from a wizard profile
 
 Open Dorms → wizard → tap Focus, Robe, or Charm. Choose a matching item tile; compare item numbers, family spell, affixes, and whole-wizard totals, then Equip. Full item details returns to that comparison. Items assigned to someone else are labeled and cannot be stolen; unequip from their owner first. Withdraw archived equipment from Strongroom → Deep storage before equipping it.
+
+
+## Version 1.8: wizard organization
+
+Dorms now shows compact equipment-focused cards, custom labels, and a tag filter. Open Profile & tags to add or remove up to six labels; equipment is near the top. Work progress and full career statistics can be expanded. Arcane Rift → Lineup → Set best lineup fills positions by maximum total current position rating and chooses reserves. It is a one-time selection, not an ongoing automatic lineup rule; rerun after injuries, recruitment, or equipment changes. Ratings do not guarantee wins.

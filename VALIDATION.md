@@ -70,3 +70,8 @@ Targeted tests passed for zero-gold recruitment to five, constrained starting st
 ## Version 1.5.0 validation
 
 Tutorial regression checks passed for objectives, sequential one-time reward claims, serialized-save duplicate prevention, early completion, optional loot objectives, and persisted hide settings. Existing arena regressions and UI panel smoke checks passed, including the mission journal. Executed and inspected a native Canvas contact sheet of spell silhouettes and room activities. Browser animation timing, full CSS layout, and physical-device behavior remain unverified.
+
+
+## Version 1.6.0 validation
+
+Full `npm test` suite passed: simulation (including century-scale history), UI panel smoke tests, arena geometry/event handling, task timing, Rift, shared production, audio lifecycle, emergency admissions, tutorial, and new rewards/duels regression tests. New tests cover probability normalization/depth/boss weighting, bounded aggregated milestones, real-roster isolation after a loss, one-time first-win payment, rematch reward prevention, JSON save/resume determinism, challenger locks, and new UI panels. Native Canvas arena renders were inspected at 360 and 720 pixels wide, including wizard opponents and warded-court scenery. Real browser CSS layout, listening quality, physical-device touch behavior, and live Firebase sync were not verified here.

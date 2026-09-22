@@ -1,3 +1,12 @@
+# Version 1.6.0 — Moments that matter
+
+- Persistent Highlights tray on the academy grounds: visible level-up announcements, aggregated offline level journeys, stat gains, and rune-tier unlocks. Keeps forty recent moments; marking read never grants rewards.
+- Equipment receives a full discovery card on the dungeon victory screen and in Highlights, including rarity, rolled quality, actual stats, spell, provenance, and inspection/equipment access. Rare and extraordinary discoveries receive an announcement.
+- Rebalanced future equipment rarity: at floor 1, ordinary equipment drops are 70% Common, 24% Uncommon, 5% Rare, 0.9% Ultra Rare, 0.09% Legendary, and 0.01% Mythic. These are conditional equipment odds, not per-enemy chances. Depth and bosses improve the distribution. Existing items and unbounded statistical rolls are unchanged.
+- New Dueling Club in the Practice Hall: twelve fixed challengers, four earned titles, animated warded arena, equipment-driven practice projections, opponent scouting, best times, rematches, one-time gold/XP/Prestige prizes, career statistics and archived results. Opponent mechanics include barriers, poison, mana drain, echoes, and enrage.
+- Practice copies begin at full HP/mana with supplied practice rune charges. Your real wizard, supplies, and equipment are safe even after a loss. Bouts pause in hidden tabs and resume from saved state. Replays never repay first-win prizes.
+- Optional tutorial mission introduces the club. Rare-drop audio now classifies the latest discovery rather than any legendary found earlier that year.
+
 # Version 1.5.0 — A living academy, a guided beginning
 
 - Distinct equipment spell silhouettes: flames, shards, lightning, leaves, crescents, stars, sigils, skulls, healing crosses, and wards.

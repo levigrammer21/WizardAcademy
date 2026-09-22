@@ -1,6 +1,6 @@
 # Wizard Academy — The First Charter
 
-Version **1.5.0**. A build-free, single-player, generational academy game for GitHub Pages. Firebase email/password authentication and private Firestore saves are integrated using the supplied project configuration.
+Version **1.6.0**. A build-free, single-player, generational academy game for GitHub Pages. Firebase email/password authentication and private Firestore saves are integrated using the supplied project configuration.
 
 ## Put it online from your phone or iPad
 
@@ -159,7 +159,7 @@ Vacant, deceased, retired, or duplicate starter slots are filled from available 
 
 At match time, configured eligible bench players replace missing starters. If fewer than five eligible players remain against a complete opponent, the match is forfeited 5–0.
 
-## Living academy and tutorial missions (1.5.0)
+## Living academy and tutorial missions (1.6.0)
 
 Upload all root files, including new **room-life.js** and **tutorial.js**. Wizards spend longer at their work stations between walks. Stationary workers shoot practice bolts at the dummy, inscribe floating rune shapes, bind seals, stir bubbling potions, study orbiting research lights, recover beneath healing signs, practice with a Rift mote, write paperwork, and read in dorms. Faculty hold teaching books. Activities are decorative and respect reduced-motion preferences; they do not alter production rates or combat.
 
@@ -168,3 +168,12 @@ Combat now distinguishes Magic Missile’s small mote from fire flames, frost sh
 The grounds show the current First Charter mission, a direct room link, and a one-time gold reward after its objective is met. Eleven core missions guide opening, recruitment, training, rune production, inscription, party selection, the first floor, returning home, opening Rift, and a valid lineup. Three optional follow-ups cover equipment, the first scheduled match, and seals. Random loot and scheduled-match waits do not block the core tutorial. Progress, completed objectives, claimed rewards, and the hide-guide setting persist in existing saves without resetting the academy.
 
 Open the Mission Journal from the banner or Front Desk → Headmaster’s handbook → Open tutorial missions. You can hide the grounds guide and revisit it later. Objectives already met are recognized; rewards cannot be claimed repeatedly.
+
+
+## Version 1.6: reward feedback and Dueling Club
+
+The grounds now include Highlights. Open it for recent item reveals and level gains; Mark all as read clears the notification count. Level notifications aggregate while away. Rare-item labels show conditional equipment probabilities; equipment itself still needs to drop. Older equipment keeps its original stats.
+
+Open Practice Hall → Enter the club. Choose a healthy wizard and challenge the next unlocked opponent. Each bout uses an isolated warded copy of the selected build, with full vitals and practice runes. The original continues their academy work. Return any active expedition before beginning. Beat three challengers per rank; twelve victories earn Club Champion. First-win prizes are one-time per academy. Rematches improve best times and career records but award no repeat gold or XP. Closing the panel leaves the bout running while the browser is visible; reopen Practice Hall to watch or concede. Hidden-tab time does not auto-resolve bouts.
+
+Install by replacing all root files with this release. Additive save fields load automatically. Firebase configuration and security rules are unchanged. No dependency installation or build is needed to play.

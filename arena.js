@@ -23,7 +23,7 @@ function text(ctx,value,x,y,size=12,color='#eee8fa',align='center'){ctx.font=`60
 function rune(ctx,x,y,r,color,rotation=0,alpha=.5){ctx.save();ctx.translate(x,y);ctx.rotate(rotation);ring(ctx,0,0,r,color,1.3,alpha);ring(ctx,0,0,r*.72,color,1,alpha*.6);for(let i=0;i<6;i++){const a=i*Math.PI/3;line(ctx,[[Math.cos(a)*r*.72,Math.sin(a)*r*.72],[Math.cos(a+.6)*r*.72,Math.sin(a+.6)*r*.72]],color,1,alpha);line(ctx,[[Math.cos(a)*r*.9,Math.sin(a)*r*.9],[Math.cos(a)*r*1.08,Math.sin(a)*r*1.08]],color,2,alpha);}ctx.restore();}
 
 export function drawDungeon(ctx,width,height,combat){
- const theme=arenaTheme(combat.floor),pad=width<450?13:22,wall=36;
+ const theme=combat.kind==='duel'?{...THEMES[2],props:'books',floor:'#302440',tile:'#3f2f56',accent:'#e2bd72'}:arenaTheme(combat.floor),pad=width<450?13:22,wall=36;
  rect(ctx,0,0,width,height,'#101322');
  rect(ctx,pad,wall,width-pad*2,height-wall-pad,theme.floor,8);
  const tileW=width<450?43:62,tileH=39;
@@ -50,6 +50,7 @@ export function drawDungeon(ctx,width,height,combat){
  for(const x of [width*.32,width*.9]){glow(ctx,x,49,36,'#f4b26d',.12);rect(ctx,x-3,38,6,15,'#66546a',2);poly(ctx,[[x-6,41],[x-4,32],[x,25],[x+5,34],[x+4,42]],'#e8a765');poly(ctx,[[x-2,39],[x,31],[x+3,38]],'#ffe2a2');}
  rune(ctx,width*.52,height*.53,Math.min(width*.19,88),theme.accent,-.1,.12);
  if(combat.boss){rune(ctx,width*.69,height*.53,Math.min(width*.17,73),'#d2a06c',.2,.22);}
+ if(combat.kind==='duel'){rune(ctx,width*.5,height*.55,Math.min(width*.3,140),'#e2bd72',0,.35);for(const x of [width*.16,width*.84]){rect(ctx,x-13,12,26,50,'#75539e',3);text(ctx,'✦',x,33,18,'#efd090');}}
  if(combat.kind==='shrine'){rune(ctx,width*.5,height*.36,25,'#8ddeca',0,.45);}
  const shade=ctx.createRadialGradient(width*.5,height*.5,width*.2,width*.5,height*.5,width*.75);shade.addColorStop(0,'#09092100');shade.addColorStop(1,'#080c2466');rect(ctx,0,0,width,height,shade);
 }
@@ -156,7 +157,7 @@ export class ArenaRenderer {
   const models=[...this.actors.values()].sort((a,b)=>a.y-b.y);
   for(const model of models){const a=model.actor,x=model.x*width,y=model.y*height,dead=model.hp<=0,bossScale=model.boss?1.4:1,sz=scale*bossScale;ctx.save();ctx.translate(x,y);ellipse(ctx,0,9*sz,16*sz,6*sz,'#070914',.43);
    if(dead){const p=clamp((this.now-model.deathAt)/.7,0,1);ctx.globalAlpha=.8-p*.36;ctx.rotate(-p*.9);ctx.scale(sz,sz*(1-.2*p));}else{ctx.scale(sz,sz);if(model.walking)ctx.translate(0,Math.sin(this.now*9+model.seed)*.8);}
-   if(a.side==='hero')drawWizard(ctx,a,model,this.now);else if(a.side==='summon')drawSkeleton(ctx,/Marshal/.test(a.name));else drawMonster(ctx,a,model,this.now,model.boss);
+   if(a.side==='hero'||a.duelist)drawWizard(ctx,a,model,this.now);else if(a.side==='summon')drawSkeleton(ctx,/Marshal/.test(a.name));else drawMonster(ctx,a,model,this.now,model.boss);
    ctx.restore();if(dead)continue;
    if(model.barrier>0){ctx.save();ctx.strokeStyle='#95e8ef';ctx.lineWidth=1.8;ctx.globalAlpha=.65;ctx.beginPath();ctx.ellipse(x,y-18*sz,22*sz,35*sz,0,0,Math.PI*2);ctx.stroke();ctx.restore();}
    const status=Object.keys(a.status||{});if(status.length){const col=COLORS[({Burn:'fire',Poison:'nature',Slow:'frost',Shock:'storm',Curse:'arcane',Bleed:'shadow',Blessing:'radiant'})[status[0]]]||'#c0b0e9';ring(ctx,x,y+10*sz,17*sz,col,1,.55);for(let k=0;k<Math.min(3,status.length);k++)circle(ctx,x+(k-1)*7,y+13*sz,2.3,col,.8);}

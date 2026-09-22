@@ -1,6 +1,6 @@
 # Wizard Academy — The First Charter
 
-Version **1.4.1**. A build-free, single-player, generational academy game for GitHub Pages. Firebase email/password authentication and private Firestore saves are integrated using the supplied project configuration.
+Version **1.5.0**. A build-free, single-player, generational academy game for GitHub Pages. Firebase email/password authentication and private Firestore saves are integrated using the supplied project configuration.
 
 ## Put it online from your phone or iPad
 
@@ -158,3 +158,13 @@ When active enrollment falls below five, Emergency Recruit appears in Front Desk
 Vacant, deceased, retired, or duplicate starter slots are filled from available recruits/current wizards; existing active starters remain. Unique jerseys are assigned normally. The button stops at five active wizards, even with a larger Dormitory. Injuries and expedition absences do not create extra enrollment capacity. Dead wizards remain dead and past forfeits remain recorded. You still need an open Rift facility. Recruitment is manual, not automatic while offline.
 
 At match time, configured eligible bench players replace missing starters. If fewer than five eligible players remain against a complete opponent, the match is forfeited 5–0.
+
+## Living academy and tutorial missions (1.5.0)
+
+Upload all root files, including new **room-life.js** and **tutorial.js**. Wizards spend longer at their work stations between walks. Stationary workers shoot practice bolts at the dummy, inscribe floating rune shapes, bind seals, stir bubbling potions, study orbiting research lights, recover beneath healing signs, practice with a Rift mote, write paperwork, and read in dorms. Faculty hold teaching books. Activities are decorative and respect reduced-motion preferences; they do not alter production rates or combat.
+
+Combat now distinguishes Magic Missile’s small mote from fire flames, frost shards, lightning strokes, nature leaves, shadow crescents, radiant stars, arcane sigils, necromantic skulls, healing crosses, and shield runes. Existing cooldowns, hitsplats, and no-flash presentation remain.
+
+The grounds show the current First Charter mission, a direct room link, and a one-time gold reward after its objective is met. Eleven core missions guide opening, recruitment, training, rune production, inscription, party selection, the first floor, returning home, opening Rift, and a valid lineup. Three optional follow-ups cover equipment, the first scheduled match, and seals. Random loot and scheduled-match waits do not block the core tutorial. Progress, completed objectives, claimed rewards, and the hide-guide setting persist in existing saves without resetting the academy.
+
+Open the Mission Journal from the banner or Front Desk → Headmaster’s handbook → Open tutorial missions. You can hide the grounds guide and revisit it later. Objectives already met are recognized; rewards cannot be claimed repeatedly.

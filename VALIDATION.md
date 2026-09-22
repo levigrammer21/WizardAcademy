@@ -1,4 +1,4 @@
-# Validation — version 1.4.1
+# Validation — version 1.5.0
 
 ## Executed and passed
 
@@ -66,3 +66,7 @@ Executed syntax checks, panel rendering, arena/Rift regressions, and a mocked We
 ## Version 1.4.1 validation
 
 Targeted tests passed for zero-gold recruitment to five, constrained starting stats despite high Prestige, untouched normal applicants, permanent historical origin/deaths, repaired lineups/unique jerseys, a non-forfeit match after rebuilding, repeat-call rejection, injury limits, and unopened-academy rejection. Panel smoke checks and edited-module syntax checks passed.
+
+## Version 1.5.0 validation
+
+Tutorial regression checks passed for objectives, sequential one-time reward claims, serialized-save duplicate prevention, early completion, optional loot objectives, and persisted hide settings. Existing arena regressions and UI panel smoke checks passed, including the mission journal. Executed and inspected a native Canvas contact sheet of spell silhouettes and room activities. Browser animation timing, full CSS layout, and physical-device behavior remain unverified.

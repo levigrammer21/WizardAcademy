@@ -1,3 +1,12 @@
+# Version 1.5.0 — A living academy, a guided beginning
+
+- Distinct equipment spell silhouettes: flames, shards, lightning, leaves, crescents, stars, sigils, skulls, healing crosses, and wards.
+- Job-specific activity animations on the grounds and longer work-station pauses between walks.
+- Eleven guided starting missions plus three optional follow-ups, direct room navigation, a mission journal, and persistent one-time rewards.
+- Static room highlights and an optional hideable guide; reduced-motion support retained.
+- Combat rules, production rates, previous saves, and the academy’s room layout retained.
+- New required root files: room-life.js and tutorial.js.
+
 # Version 1.4.1 — Emergency admissions
 
 - Free, immediate basic recruits restore enrollment to five active wizards.

@@ -1,4 +1,4 @@
-export const VERSION='1.4.1';
+export const VERSION='1.5.0';
 export const DAY=86400000, HOUR=3600000, CAP=12*HOUR;
 export const FAMILIES=[
 {id:'fire',name:'Ember',color:'#f49462',icon:'☀',spell:'Cinderburst',kind:'aoe',status:'Burn',sport:'Power'},

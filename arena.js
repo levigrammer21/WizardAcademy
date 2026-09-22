@@ -182,7 +182,13 @@ export class ArenaRenderer {
   else if(family==='storm'){line(ctx,[[x-9,y+3],[x-2,y-4],[x+1,y+3],[x+9,y-5]],'#e3d6ff',2);}
   else if(f.kind==='heal'){circle(ctx,x,y,5*scale,f.color,.9);line(ctx,[[x-3,y],[x+3,y]],'#efffea',1.5);line(ctx,[[x,y-3],[x,y+3]],'#efffea',1.5);}
   else if(f.kind==='shield'){rune(ctx,x,y,7*scale,f.color,p,1);}
-  else{circle(ctx,x,y,(family==='fire'?6:4)*scale,f.color);circle(ctx,x-1,y-1,2*scale,'#fff1d6',.95);}
+  else if(family==='fire'){poly(ctx,[[x-14*scale,y+3*scale],[x-8*scale,y-5*scale],[x,y-8*scale],[x+9*scale,y],[x,y+7*scale]],'#f47e40');circle(ctx,x,y,5*scale,'#ffd16b');circle(ctx,x+2,y-1,2*scale,'#fff0aa');}
+  else if(family==='nature'){for(let k=0;k<3;k++){const bx=x-k*5,by=y+Math.sin(p*8+k)*4;ellipse(ctx,bx,by,5*scale,2.5*scale,'#a9df68');}circle(ctx,x,y,2,'#e0f5a2');}
+  else if(family==='shadow'){circle(ctx,x,y,8*scale,'#b984d8',.8);circle(ctx,x+4*scale,y-3*scale,7*scale,'#302238');line(ctx,[[x-14,y+3],[x-7,y],[x-1,y+3]],'#c4a2e3',2);}
+  else if(family==='radiant'){ctx.save();ctx.translate(x,y);ctx.rotate(p*.6);poly(ctx,[[0,-11*scale],[3*scale,-3*scale],[11*scale,0],[3*scale,3*scale],[0,11*scale],[-3*scale,3*scale],[-11*scale,0],[-3*scale,-3*scale]],'#ffe39b');circle(ctx,0,0,3*scale,'#fff5d3');ctx.restore();}
+  else if(family==='arcane'){rune(ctx,x,y,9*scale,'#c6a0ff',p*2,1);poly(ctx,[[x,y-4],[x+4,y],[x,y+4],[x-4,y]],'#e8d3ff');}
+  else if(family==='necromancy'){circle(ctx,x,y,6*scale,'#d1e5aa');circle(ctx,x-2,y-1,1.5,'#3c4b38');circle(ctx,x+2,y-1,1.5,'#3c4b38');line(ctx,[[x-2,y+5],[x+2,y+5]],'#9bbb85',3);}
+  else{circle(ctx,x,y,3*scale,f.color);circle(ctx,x-1,y-1,1.2*scale,'#eee6ff',.9);}
  }
 }
 

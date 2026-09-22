@@ -1,3 +1,11 @@
+# Version 1.7.0 — Install your academy & wizard wardrobe
+
+- Installable PWA with a standalone window, root-relative manifest, 192/512-pixel maskable PNG icons, iPad home-screen metadata, and offline app-shell caching for local play. All files remain at repository root.
+- Installation help is available before sign-in and at Front Desk → Settings & save → Install & app updates. Android uses the native browser installation prompt when offered; iPad instructions use Safari’s Share menu.
+- Service worker caches only this academy’s static files, never Firebase/authentication traffic. A new release waits for explicit Save & reload update or for all app windows to close. Explicit update saves locally first. Cache names are scoped to the site, so another installed copy’s cache is not deleted.
+- Tap any active wizard’s Focus, Robe, or Charm slot to open matching items. Select a tile for current-versus-selected item stats, spell and rune requirements, affixes, and resulting whole-wizard stats. Equip directly and return to the wizard without going through the Strongroom.
+- Other wizards’ equipment is visible for comparison but cannot be taken silently. Expedition and status restrictions remain enforced. Deep-storage items must be withdrawn first. Candidate lists retain compact inventory tiles and pagination.
+
 # Version 1.6.0 — Moments that matter
 
 - Persistent Highlights tray on the academy grounds: visible level-up announcements, aggregated offline level journeys, stat gains, and rune-tier unlocks. Keeps forty recent moments; marking read never grants rewards.

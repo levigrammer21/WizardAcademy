@@ -1,0 +1,25 @@
+{
+  "id": "./",
+  "name": "Wizard Academy",
+  "short_name": "Wizard Academy",
+  "description": "Build an academy. Raise generations. Remember everyone.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#17102f",
+  "theme_color": "#38205d",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

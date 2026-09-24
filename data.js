@@ -1,4 +1,4 @@
-export const VERSION='1.8.0';
+export const VERSION='2.0.0';
 export const DAY=86400000, HOUR=3600000, CAP=12*HOUR;
 export const FAMILIES=[
 {id:'fire',name:'Ember',color:'#f49462',icon:'☀',spell:'Cinderburst',kind:'aoe',status:'Burn',sport:'Power'},
@@ -29,7 +29,7 @@ export const ROOMS=[
 {id:'hall',name:'Hall of Names',sub:'Legends & achievements',icon:'♜',cost:400,prestige:25},
 {id:'garden',name:'Moon Garden',sub:'Potions & quiet company',icon:'❧',cost:260,prestige:12},
 {id:'observatory',name:'Observatory',sub:'Research & discoveries',icon:'✧',cost:650,prestige:40}];
-export const JOBS={rest:'Rest & socialize',training:'Adventure training',athletics:'Rift practice',blank:'Make unscribed runes',fire:'Ember inscription',frost:'Rime inscription',storm:'Tempest inscription',restoration:'Mending inscription',necromancy:'Grave inscription',arcane:'Aether inscription',nature:'Briar inscription',shadow:'Umbral inscription',radiant:'Dawn inscription',barrier:'Bastion inscription',seals:'Bind boss seals',recovery:'Infirmary patient',farm:'Cleared-floor patrol',boss:'Defeated-boss patrol',garden:'Brew potions',research:'Arcane research',clerical:'Administrative work'};
+export const JOBS={rest:'Rest & socialize',training:'Adventure training',athletics:'Rift practice',blank:'Make unscribed runes',fire:'Ember inscription',frost:'Rime inscription',storm:'Tempest inscription',restoration:'Mending inscription',necromancy:'Grave inscription',arcane:'Aether inscription',nature:'Briar inscription',shadow:'Umbral inscription',radiant:'Dawn inscription',barrier:'Bastion inscription',seals:'Bind boss seals',recovery:'Infirmary patient',forest:'Enchanted Forest',rescued:'Awaiting forest rescue',farm:'Cleared-floor patrol',boss:'Defeated-boss patrol',garden:'Brew potions',research:'Arcane research',clerical:'Administrative work'};
 export const INJURIES=['singed eyebrows','concussion','damaged casting hand','magical exhaustion','cursed wound','ankle hex','spectral hiccups'];
 export const LEAGUES=['JV League','Regional League','Grand League','Archmage League'];
 const schoolRows=[

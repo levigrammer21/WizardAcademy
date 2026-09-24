@@ -1,7 +1,7 @@
 // App shell only. Never intercept authentication, Firestore, or other origins.
 const PREFIX='wizard-academy-shell-'+encodeURIComponent(self.registration.scope)+'-';
-const CACHE=PREFIX+'2.0.0';
-const ASSETS=["./roster.js","./forest.js","./progression.js","./", "./index.html", "./style.css", "./manifest.webmanifest", "./icon.svg", "./icon-192.png", "./icon-512.png", "./academy.js", "./app.js", "./arena.js", "./combat-events.js", "./combat.js", "./data.js", "./duels.js", "./equipment.js", "./firebase-config.js", "./jerseys.js", "./model.js", "./persistence.js", "./playback.js", "./pwa.js", "./rewards.js", "./rift-motion.js", "./room-life.js", "./simulation.js", "./sound.js", "./sports.js", "./tasks.js", "./tutorial.js", "./workers.js"];
+const CACHE=PREFIX+'2.1.0';
+const ASSETS=["./roster.js","./forest.js","./progression.js","./careers.js","./provenance.js","./", "./index.html", "./style.css", "./manifest.webmanifest", "./icon.svg", "./icon-192.png", "./icon-512.png", "./academy.js", "./app.js", "./arena.js", "./combat-events.js", "./combat.js", "./data.js", "./duels.js", "./equipment.js", "./firebase-config.js", "./jerseys.js", "./model.js", "./persistence.js", "./playback.js", "./pwa.js", "./rewards.js", "./rift-motion.js", "./room-life.js", "./simulation.js", "./sound.js", "./sports.js", "./tasks.js", "./tutorial.js", "./workers.js"];
 const URLS=new Set(ASSETS.map(path=>new URL(path,self.registration.scope).href));
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS.map(path=>new Request(new URL(path,self.registration.scope),{cache:'reload'}))))));
 // New versions wait by default. The player explicitly saves before activation.

@@ -23,7 +23,7 @@ function text(ctx,value,x,y,size=12,color='#eee8fa',align='center'){ctx.font=`60
 function rune(ctx,x,y,r,color,rotation=0,alpha=.5){ctx.save();ctx.translate(x,y);ctx.rotate(rotation);ring(ctx,0,0,r,color,1.3,alpha);ring(ctx,0,0,r*.72,color,1,alpha*.6);for(let i=0;i<6;i++){const a=i*Math.PI/3;line(ctx,[[Math.cos(a)*r*.72,Math.sin(a)*r*.72],[Math.cos(a+.6)*r*.72,Math.sin(a+.6)*r*.72]],color,1,alpha);line(ctx,[[Math.cos(a)*r*.9,Math.sin(a)*r*.9],[Math.cos(a)*r*1.08,Math.sin(a)*r*1.08]],color,2,alpha);}ctx.restore();}
 
 export function drawDungeon(ctx,width,height,combat){
- const theme=combat.kind==='duel'?{...THEMES[2],props:'books',floor:'#302440',tile:'#3f2f56',accent:'#e2bd72'}:arenaTheme(combat.floor),pad=width<450?13:22,wall=36;
+ const theme=combat.kind==='forest'?{...THEMES[3],floor:'#213b32',tile:'#29483c',wall:'#142e29',edge:'#578c66',accent:'#a7d584',props:'forest'}:combat.kind==='duel'?{...THEMES[2],props:'books',floor:'#302440',tile:'#3f2f56',accent:'#e2bd72'}:arenaTheme(combat.floor),pad=width<450?13:22,wall=36;
  rect(ctx,0,0,width,height,'#101322');
  rect(ctx,pad,wall,width-pad*2,height-wall-pad,theme.floor,8);
  const tileW=width<450?43:62,tileH=39;
@@ -33,6 +33,7 @@ export function drawDungeon(ctx,width,height,combat){
   line(ctx,[[tx,y+1],[tx+tw,y+1]],theme.edge,.6,.24);
   if(seed%11===0)line(ctx,[[tx+tw*.3,y+3],[tx+tw*.5,y+13],[tx+tw*.43,y+24]],'#0b1019',1,.3);
  }
+ if(combat.kind==='forest'){for(const [x,y] of [[width*.10,height*.22],[width*.88,height*.28],[width*.08,height*.78],[width*.90,height*.76]]){rect(ctx,x-5,y,10,34,'#765f47',3);for(const [dx,dy,size] of [[0,-9,23],[-12,1,14],[13,0,16]])circle(ctx,x+dx,y+dy,size,'#427457',.92);}for(let i=0;i<14;i++){const x=pad+visualHash('f'+i)%Math.max(1,width-pad*2),y=wall+visualHash('g'+i)%Math.max(1,height-wall-pad);circle(ctx,x,y,2,'#bde3a3',.38);}return;}
  // Architectural boundaries, a dark exit arch, and a threshold back to the academy.
  rect(ctx,pad,9,width-2*pad,33,theme.wall,5);
  for(let x=pad+2;x<width-pad;x+=51){rect(ctx,x,11,Math.min(47,width-pad-x),24,theme.tile,2);line(ctx,[[x,35],[Math.min(x+47,width-pad),35]],theme.edge,2,.45);}
@@ -74,10 +75,14 @@ function drawSkeleton(ctx,marshal=false){
  for(let y=-15;y<-4;y+=4)line(ctx,[[-5,y],[5,y]],bone,2);circle(ctx,0,-26,8,bone);circle(ctx,-3,-27,1.8,'#273e36');circle(ctx,3,-27,1.8,'#273e36');line(ctx,[[-3,-21],[3,-21]],'#657c58',1.2);
  if(marshal){poly(ctx,[[-8,-32],[-9,-42],[-3,-37],[1,-45],[5,-37],[10,-42],[8,-32]],'#c9b771');line(ctx,[[14,-5],[14,-32]],'#b5cf97',3);}
 }
-function enemyType(name){name=name.toLowerCase();if(/slime|mite|leech/.test(name))return 'slime';if(/golem|clockwork|parliament/.test(name))return 'golem';if(/mimic/.test(name))return 'mimic';if(/wraith|ghost|hollow|mirror|zero|star/.test(name))return 'wraith';if(/eel|serpent|hound/.test(name))return 'serpent';if(/imp|ghoul|briar|orchard/.test(name))return 'imp';return 'skeleton';}
+function enemyType(name){name=name.toLowerCase();if(/wolf|guardian/.test(name))return 'wolf';if(/spider|widow/.test(name))return 'spider';if(/treant/.test(name))return 'treant';if(/goblin/.test(name))return 'goblin';if(/wisp/.test(name))return 'wraith';if(/slime|spore/.test(name))return 'slime';if(/slime|mite|leech/.test(name))return 'slime';if(/golem|clockwork|parliament/.test(name))return 'golem';if(/mimic/.test(name))return 'mimic';if(/wraith|ghost|hollow|mirror|zero|star/.test(name))return 'wraith';if(/eel|serpent|hound/.test(name))return 'serpent';if(/imp|ghoul|briar|orchard/.test(name))return 'imp';return 'skeleton';}
 function drawMonster(ctx,actor,model,t,boss){
  const type=enemyType(actor.name),color=boss?'#c8a2cd':'#b399ad';
  if(type==='skeleton')drawSkeleton(ctx,boss);
+ else if(type==='wolf'){ellipse(ctx,0,-11,23,13,'#8d9d8d');ellipse(ctx,-16,-23,14,11,'#aab4a1');poly(ctx,[[-26,-27],[-23,-44],[-13,-34]],'#889a88');poly(ctx,[[-11,-34],[-4,-44],[-4,-25]],'#889a88');for(const x of [-14,13]){rect(ctx,x-4,-5,6,17,'#78877b',2);}circle(ctx,-22,-25,2,'#efd48d');line(ctx,[[18,-11],[28,-21],[33,-19]],'#829385',6);}
+ else if(type==='spider'){ellipse(ctx,0,-14,18,13,'#66536f');ellipse(ctx,-10,-26,9,8,'#745b80');for(const side of [-1,1])for(let i=0;i<4;i++)line(ctx,[[side*7,-15+i*2],[side*(23+i*2),-26+i*9],[side*(29+i*2),-8+i*7]],'#8f7899',3);for(const x of [-14,-9])circle(ctx,x,-28,1.7,'#efb7b8');}
+ else if(type==='treant'){rect(ctx,-11,-37,23,45,'#786b53',5);for(const side of [-1,1])line(ctx,[[side*8,-18],[side*23,-27],[side*29,-39]],'#756a53',7);for(const [x,y] of [[-10,-38],[13,-43],[2,-50]])circle(ctx,x,y,14,'#6f996c');circle(ctx,-5,-28,2,'#f3d79c');circle(ctx,6,-28,2,'#f3d79c');}
+ else if(type==='goblin'){poly(ctx,[[-9,8],[-11,-24],[8,-24],[12,8]],'#7e6d62');circle(ctx,0,-30,12,'#91aa71');poly(ctx,[[-9,-35],[-24,-39],[-11,-29]],'#91aa71');poly(ctx,[[9,-35],[24,-39],[11,-29]],'#91aa71');circle(ctx,-4,-32,2,'#e2ca83');circle(ctx,5,-32,2,'#e2ca83');line(ctx,[[13,-18],[22,-32]],'#c8ac78',4);}
  else if(type==='slime'){ctx.fillStyle='#92b2a4';ctx.beginPath();ctx.moveTo(-18,8);ctx.bezierCurveTo(-26,-10,-10,-36,4,-28);ctx.bezierCurveTo(21,-24,26,3,18,9);ctx.closePath();ctx.fill();ellipse(ctx,-4,-20,8,4,'#c8e0be',.35);circle(ctx,-6,-10,3,'#354852');circle(ctx,7,-10,3,'#354852');}
  else if(type==='golem'){rect(ctx,-14,-27,28,31,'#9292ac',5);rect(ctx,-11,-45,22,20,'#b2a5b5',4);rect(ctx,-22,-23,8,28,'#7e7e96',3);rect(ctx,14,-23,8,28,'#7e7e96',3);rect(ctx,-12,2,9,11,'#6c6d86',2);rect(ctx,3,2,9,11,'#6c6d86',2);rect(ctx,-7,-37,5,3,'#f1c78c');rect(ctx,3,-37,5,3,'#f1c78c');rune(ctx,0,-13,8,'#dab791',0,.7);}
  else if(type==='mimic'){rect(ctx,-23,-8,46,20,'#8f5e52',4);poly(ctx,[[-24,-12],[-21,-30],[20,-30],[24,-12]],'#bb8f66');line(ctx,[[-20,-12],[20,-12]],'#241827',6);for(let i=-16;i<20;i+=8)poly(ctx,[[i,-14],[i+5,-14],[i+2,-7]],'#e9dabc');circle(ctx,-9,-23,3,'#f2c799');circle(ctx,9,-23,3,'#f2c799');}
@@ -150,7 +155,7 @@ export class ArenaRenderer {
   this.rings.push({x:target.x,y:target.y,color:flight.color,at:this.now,life:event.kind==='shield'?1.1:.65,kind:event.kind});
  }
  draw(ctx,width,height,combat){
-  if(!this.background||this.background.width!==width||this.background.height!==height){this.background=typeof OffscreenCanvas!=='undefined'?new OffscreenCanvas(width,height):document.createElement('canvas');this.background.width=width;this.background.height=height;drawDungeon(this.background.getContext('2d'),width,height,combat);}
+  if(!this.background||this.background.width!==width||this.background.height!==height||this.backgroundKind!==combat.kind||this.backgroundFloor!==combat.floor){this.background=typeof OffscreenCanvas!=='undefined'?new OffscreenCanvas(width,height):document.createElement('canvas');this.background.width=width;this.background.height=height;drawDungeon(this.background.getContext('2d'),width,height,combat);this.backgroundKind=combat.kind;this.backgroundFloor=combat.floor;}
   ctx.clearRect(0,0,width,height);ctx.drawImage(this.background,0,0,width,height);
   const scale=clamp(width/700,.72,1.06);
   for(const r of this.rings.filter(r=>['summon','phase'].includes(r.kind))){const t=(this.now-r.at)/r.life;rune(ctx,r.x*width,r.y*height+7,scale*(18+26*t),r.color,t*.5,(1-t)*.7);}
